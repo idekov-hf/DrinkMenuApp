@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		5D9B339D1C990C0000B6EAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B339C1C990C0000B6EAFB /* AppDelegate.swift */; };
-		5D9B339F1C990C0000B6EAFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B339E1C990C0000B6EAFB /* ViewController.swift */; };
+		5D9B339F1C990C0000B6EAFB /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B339E1C990C0000B6EAFB /* DrinkViewController.swift */; };
 		5D9B33A21C990C0000B6EAFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9B33A01C990C0000B6EAFB /* Main.storyboard */; };
 		5D9B33A41C990C0000B6EAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D9B33A31C990C0000B6EAFB /* Assets.xcassets */; };
 		5D9B33A71C990C0000B6EAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D9B33A51C990C0000B6EAFB /* LaunchScreen.storyboard */; };
 		5D9B33B21C990C0000B6EAFB /* DrinkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B33B11C990C0000B6EAFB /* DrinkAppTests.swift */; };
+		5D9B33BD1C991EFD00B6EAFB /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B33BC1C991EFD00B6EAFB /* Drink.swift */; };
+		5D9B33BE1C991EFD00B6EAFB /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B33BC1C991EFD00B6EAFB /* Drink.swift */; };
+		5DD4F6DE1C998F0A0098A183 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4F6DD1C998F0A0098A183 /* DrinkTableViewCell.swift */; };
+		5DD4F6E01C998FCB0098A183 /* DrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4F6DF1C998FCB0098A183 /* DrinkTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +32,7 @@
 /* Begin PBXFileReference section */
 		5D9B33991C990C0000B6EAFB /* DrinkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D9B339C1C990C0000B6EAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D9B339E1C990C0000B6EAFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D9B339E1C990C0000B6EAFB /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		5D9B33A11C990C0000B6EAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D9B33A31C990C0000B6EAFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D9B33A61C990C0000B6EAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +40,9 @@
 		5D9B33AD1C990C0000B6EAFB /* DrinkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D9B33B11C990C0000B6EAFB /* DrinkAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkAppTests.swift; sourceTree = "<group>"; };
 		5D9B33B31C990C0000B6EAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D9B33BC1C991EFD00B6EAFB /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		5DD4F6DD1C998F0A0098A183 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
+		5DD4F6DF1C998FCB0098A183 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				5D9B339C1C990C0000B6EAFB /* AppDelegate.swift */,
-				5D9B339E1C990C0000B6EAFB /* ViewController.swift */,
+				5D9B339E1C990C0000B6EAFB /* DrinkViewController.swift */,
+				5D9B33BC1C991EFD00B6EAFB /* Drink.swift */,
+				5DD4F6DF1C998FCB0098A183 /* DrinkTableViewController.swift */,
+				5DD4F6DD1C998F0A0098A183 /* DrinkTableViewCell.swift */,
 				5D9B33A01C990C0000B6EAFB /* Main.storyboard */,
 				5D9B33A31C990C0000B6EAFB /* Assets.xcassets */,
 				5D9B33A51C990C0000B6EAFB /* LaunchScreen.storyboard */,
@@ -197,7 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D9B339F1C990C0000B6EAFB /* ViewController.swift in Sources */,
+				5D9B339F1C990C0000B6EAFB /* DrinkViewController.swift in Sources */,
+				5DD4F6E01C998FCB0098A183 /* DrinkTableViewController.swift in Sources */,
+				5D9B33BD1C991EFD00B6EAFB /* Drink.swift in Sources */,
+				5DD4F6DE1C998F0A0098A183 /* DrinkTableViewCell.swift in Sources */,
 				5D9B339D1C990C0000B6EAFB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D9B33BE1C991EFD00B6EAFB /* Drink.swift in Sources */,
 				5D9B33B21C990C0000B6EAFB /* DrinkAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +402,7 @@
 				5D9B33B81C990C0000B6EAFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D9B33B91C990C0000B6EAFB /* Build configuration list for PBXNativeTarget "DrinkAppTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +411,7 @@
 				5D9B33BB1C990C0000B6EAFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
