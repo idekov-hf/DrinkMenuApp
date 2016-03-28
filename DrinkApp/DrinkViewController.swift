@@ -16,9 +16,11 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    let cashDelegate = CashTextFieldDelegate()
+    
     /*
     This value is either passed by DrinkTableViewController in prepareForSegue(_:sender:)
-    or constructed as part of adding a new meal
+    or constructed as part of adding a new drink
     */
     var drink: Drink?
     
@@ -27,6 +29,7 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         // Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
+        priceTextField.delegate = cashDelegate
         
         // Set up views if editing an existing Drink.
         if let drink = drink {
@@ -43,18 +46,23 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         // Hide the keyboard.
-        textField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
+        priceTextField.becomeFirstResponder()
         return true
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         checkValidDrinkName()
-        navigationItem.title = textField.text
+        if textField == nameTextField {
+            navigationItem.title = textField.text
+        }
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
         // Disable the Save button while editing.
-        saveButton.enabled = false
+//        if textField == nameTextField {
+//            saveButton.enabled = false
+//        }
     }
     
     func checkValidDrinkName() {
@@ -98,7 +106,7 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             let photo = photoImageView.image
             let price = priceTextField.text ?? ""
             
-            // Set the drink to be passed to MealTableViewController after the unwind segue.
+            // Set the drink to be passed to DrinkTableViewController after the unwind segue.
             drink = Drink(name: name, photo: photo, price: price)
         }
     }

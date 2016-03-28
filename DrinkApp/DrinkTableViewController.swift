@@ -7,42 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
 class DrinkTableViewController: UITableViewController {
     
     // MARK: Properties
     var drinks = [Drink]()
+    var loggedIn: Bool = false
+    let ref = Firebase(url: "https://drinks-app.firebaseio.com/drinks")
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // User the edit button item provided by the table view controller.
-        navigationItem.leftBarButtonItem = editButtonItem()
-        
-        // Load sample data.
-        loadSampleDrinks()
+        if let loggedInBool = defaults.objectForKey("loggedIn") {
+            loggedIn = loggedInBool as! Bool
+        }
     }
     
-    func loadSampleDrinks() {
-        let photo1 = UIImage(named: "drink1")!
-        let drink1 = Drink(name: "Drink 1", photo: photo1, price: "3")!
-        
-        let photo2 = UIImage(named: "drink2")!
-        let drink2 = Drink(name: "Drink 2", photo: photo2, price: "4")!
-        
-        let photo3 = UIImage(named: "drink3")!
-        let drink3 = Drink(name: "Drink 3", photo: photo3, price: "2")!
-        
-        drinks += [drink1, drink2, drink3]
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        if loggedIn {
+            navigationItem.leftBarButtonItem = editButtonItem()
+        }
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -55,6 +44,9 @@ class DrinkTableViewController: UITableViewController {
         // Table view cells are reused and should be dequed using a cell identifier.
         let cellIdentifier = "DrinkTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DrinkTableViewCell
+        
+        cell.userInteractionEnabled = loggedIn
+        
         // Fetches the appropriate drink for the data source layout.
         let drink = drinks[indexPath.row]
         
@@ -68,7 +60,7 @@ class DrinkTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return loggedIn
     }
 
     // Override to support editing the table view.
@@ -82,23 +74,7 @@ class DrinkTableViewController: UITableViewController {
         }    
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetail" {
@@ -127,8 +103,22 @@ class DrinkTableViewController: UITableViewController {
                 let newIndexPath = NSIndexPath(forRow: drinks.count, inSection: 0)
                 drinks.append(drink)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+//                let drinkRef = self.ref.childByAppendingPath(drink.name.lowercaseString)
+//                drinkRef.setValue(drink.toAnyObject())
             }
+        }
+        else if let sourceViewController = sender.sourceViewController as? LoginViewController {
+            loggedIn = sourceViewController.loggedIn
+            defaults.setBool(loggedIn, forKey: "loggedIn")
         }
     }
 
+    @IBAction func addItem(sender: UIBarButtonItem) {
+        if loggedIn {
+            performSegueWithIdentifier("AddItem", sender: sender)
+        }
+        else {
+            performSegueWithIdentifier("LogIn", sender: sender)
+        }
+    }
 }
