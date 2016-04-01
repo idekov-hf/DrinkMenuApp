@@ -17,7 +17,6 @@ class DrinkTableViewController: UITableViewController {
     let ref = Firebase(url: "https://drinks-app.firebaseio.com/drinks")
     let defaults = NSUserDefaults.standardUserDefaults()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let loggedInBool = defaults.objectForKey("loggedIn") {
@@ -51,9 +50,10 @@ class DrinkTableViewController: UITableViewController {
         let drink = drinks[indexPath.row]
         
         cell.nameLabel.text = drink.name
-        cell.photoImageView.image = drink.photo
         cell.priceLabel.text = drink.price
-
+        cell.descriptionLabel.text = drink.description
+        cell.photoImageView.image = drink.photo
+        
         return cell
     }
 

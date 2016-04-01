@@ -12,8 +12,10 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
+    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     let cashDelegate = CashTextFieldDelegate()
@@ -30,6 +32,7 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         // Handle the text field's user input through delegate callbacks.
         nameTextField.delegate = self
         priceTextField.delegate = cashDelegate
+        descriptionTextField.delegate = self
         
         // Set up views if editing an existing Drink.
         if let drink = drink {
@@ -37,6 +40,7 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             nameTextField.text = drink.name
             photoImageView.image = drink.photo
             priceTextField.text = drink.price
+            descriptionTextField.text = drink.description
         }
         
         // Enable the Save button only if the text field has a Valid Drink name.
@@ -46,8 +50,14 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         // Hide the keyboard.
-        nameTextField.resignFirstResponder()
-        priceTextField.becomeFirstResponder()
+        if textField == nameTextField {
+            nameTextField.resignFirstResponder()
+            descriptionTextField.becomeFirstResponder()
+        }
+        else if textField == descriptionTextField {
+            descriptionTextField.resignFirstResponder()
+            priceTextField.becomeFirstResponder()
+        }
         return true
     }
     
@@ -105,9 +115,10 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             let name = nameTextField.text ?? ""
             let photo = photoImageView.image
             let price = priceTextField.text ?? ""
+            let description = descriptionTextField.text ?? ""
             
             // Set the drink to be passed to DrinkTableViewController after the unwind segue.
-            drink = Drink(name: name, photo: photo, price: price)
+            drink = Drink(name: name, photo: photo, price: price, description: description)
         }
     }
     
