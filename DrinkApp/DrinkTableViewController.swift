@@ -16,18 +16,45 @@ class DrinkTableViewController: UITableViewController {
     var loggedIn: Bool = false
     let ref = Firebase(url: "https://drinks-app.firebaseio.com/drinks")
     let defaults = NSUserDefaults.standardUserDefaults()
+//    var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let loggedInBool = defaults.objectForKey("loggedIn") {
             loggedIn = loggedInBool as! Bool
         }
+        // Activity indicator (ie loading icon)
+//        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+//        activityIndicator.center = CGPointMake(view.center.x, view.center.y)
+//        activityIndicator.startAnimating()
+//        view.addSubview(activityIndicator)
     }
     
     override func viewWillAppear(animated: Bool) {
         if loggedIn {
             navigationItem.leftBarButtonItem = editButtonItem()
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        ref.observeEventType(.Value, withBlock: { snapshot in
+//            print(snapshot.value)
+            var newDrinks = [Drink]()
+            for item in snapshot.children {
+                let drink = Drink(snapshot: item as! FDataSnapshot)
+                newDrinks.append(drink)
+            }
+            self.drinks = newDrinks
+            self.tableView.reloadData()
+            
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
+        
+//        activityIndicator.stopAnimating()
+        
     }
 
     // MARK: - Table view data source
@@ -66,9 +93,13 @@ class DrinkTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            // Delete drink data on Firebase
+            let drinkRef = drinks[indexPath.row].ref
+            drinkRef?.removeValue()
             // Delete the row from the data source
             drinks.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -97,14 +128,16 @@ class DrinkTableViewController: UITableViewController {
                 // Update an existing drink.
                 drinks[selectedIndexPath.row] = drink
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                let drinkRef = drink.ref
+                drinkRef!.updateChildValues(drink.toAnyObject())
             }
             else {
                 // Add a new drink.
                 let newIndexPath = NSIndexPath(forRow: drinks.count, inSection: 0)
                 drinks.append(drink)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-//                let drinkRef = self.ref.childByAppendingPath(drink.name.lowercaseString)
-//                drinkRef.setValue(drink.toAnyObject())
+                let drinkRef = drink.ref
+                drinkRef!.setValue(drink.toAnyObject())
             }
         }
         else if let sourceViewController = sender.sourceViewController as? LoginViewController {

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -11,20 +10,20 @@
         <scene sceneID="mfo-yf-ODe">
             <objects>
                 <tableViewController id="NHE-St-e63" customClass="DrinkTableViewController" customModule="DrinkApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="UA5-8V-jCq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="28" sectionFooterHeight="28" id="UA5-8V-jCq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DrinkTableViewCell" rowHeight="90" id="FeK-5d-fI2" customClass="DrinkTableViewCell" customModule="DrinkApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DrinkTableViewCell" rowHeight="144" id="FeK-5d-fI2" customClass="DrinkTableViewCell" customModule="DrinkApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FeK-5d-fI2" id="LLH-KY-Jw7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Qus-NJ-yxg">
-                                            <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Qus-NJ-yxg">
+                                            <rect key="frame" x="0.0" y="0.0" width="81" height="144"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qta-CU-os2">
                                             <rect key="frame" x="98" y="8" width="427" height="24"/>
@@ -39,7 +38,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq3-ec-nBY">
-                                            <rect key="frame" x="97" y="38" width="495" height="43"/>
+                                            <rect key="frame" x="97" y="38" width="495" height="97"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -51,10 +50,14 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="atU-QQ-RBe" secondAttribute="trailing" id="BD2-v9-co6"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="sq3-ec-nBY" secondAttribute="bottom" id="EGm-Y7-xAG"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="sq3-ec-nBY" secondAttribute="trailing" id="Ijo-CD-1cA"/>
+                                        <constraint firstItem="Qus-NJ-yxg" firstAttribute="top" secondItem="LLH-KY-Jw7" secondAttribute="top" id="Iwm-NM-rUp"/>
                                         <constraint firstItem="sq3-ec-nBY" firstAttribute="leading" secondItem="LLH-KY-Jw7" secondAttribute="leadingMargin" constant="89" id="KWz-Qq-7O4"/>
+                                        <constraint firstItem="sq3-ec-nBY" firstAttribute="leading" secondItem="Qus-NJ-yxg" secondAttribute="trailing" constant="16" id="LLq-G9-u0U"/>
                                         <constraint firstItem="qta-CU-os2" firstAttribute="leading" secondItem="LLH-KY-Jw7" secondAttribute="leadingMargin" constant="90" id="Meu-vk-p8x"/>
                                         <constraint firstAttribute="topMargin" secondItem="atU-QQ-RBe" secondAttribute="top" id="Nae-Av-Wct"/>
+                                        <constraint firstItem="Qus-NJ-yxg" firstAttribute="leading" secondItem="LLH-KY-Jw7" secondAttribute="leading" id="lIb-ej-yWa"/>
                                         <constraint firstItem="atU-QQ-RBe" firstAttribute="leading" secondItem="qta-CU-os2" secondAttribute="trailing" constant="8" id="mjw-OQ-q98"/>
+                                        <constraint firstAttribute="bottom" secondItem="Qus-NJ-yxg" secondAttribute="bottom" constant="-1" id="nHo-g2-nif"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -100,28 +103,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="SYy-16-tRE">
-                                <rect key="frame" x="20" y="79" width="560" height="446"/>
+                                <rect key="frame" x="20" y="79" width="560" height="510"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-YF-NN4">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Evh-EP-yir">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Evh-EP-yir">
                                         <rect key="frame" x="0.0" y="42" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edf-vX-fkS">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter drink price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edf-vX-fkS">
                                         <rect key="frame" x="0.0" y="84" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-Xu-pPt">
-                                        <rect key="frame" x="120" y="126" width="320" height="320"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="kVS-Xu-pPt">
+                                        <rect key="frame" x="172" y="126" width="216" height="384"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="kVS-Xu-pPt" secondAttribute="height" multiplier="1:1" id="3af-nT-Zmp"/>
+                                            <constraint firstAttribute="width" constant="216" id="XQC-Ji-Ykg"/>
+                                            <constraint firstAttribute="height" constant="384" id="YoS-77-wC8"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="Yb5-Vb-2A9" appends="YES" id="tGS-xw-TLh"/>
@@ -129,11 +133,10 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Evh-EP-yir" firstAttribute="leading" secondItem="bp8-YF-NN4" secondAttribute="leading" id="7zU-Lq-jPI"/>
                                     <constraint firstAttribute="trailing" secondItem="edf-vX-fkS" secondAttribute="trailing" id="9pC-r8-krZ"/>
-                                    <constraint firstItem="Evh-EP-yir" firstAttribute="leading" secondItem="SYy-16-tRE" secondAttribute="leading" id="Iko-nZ-x3b"/>
                                     <constraint firstItem="edf-vX-fkS" firstAttribute="leading" secondItem="SYy-16-tRE" secondAttribute="leading" id="J5j-po-uVn"/>
                                     <constraint firstItem="bp8-YF-NN4" firstAttribute="leading" secondItem="SYy-16-tRE" secondAttribute="leading" id="Obm-Mn-IPB"/>
-                                    <constraint firstAttribute="trailing" secondItem="Evh-EP-yir" secondAttribute="trailing" id="UJQ-Ie-8ys"/>
                                     <constraint firstAttribute="trailing" secondItem="bp8-YF-NN4" secondAttribute="trailing" id="r4n-8H-Tod"/>
                                 </constraints>
                             </stackView>
