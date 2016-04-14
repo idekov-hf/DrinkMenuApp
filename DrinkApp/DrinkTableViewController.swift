@@ -16,31 +16,16 @@ class DrinkTableViewController: UITableViewController {
     var loggedIn: Bool = false
     let ref = Firebase(url: "https://drinks-app.firebaseio.com/drinks")
     let defaults = NSUserDefaults.standardUserDefaults()
-//    var activityIndicator: UIActivityIndicatorView!
+    var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let loggedInBool = defaults.objectForKey("loggedIn") {
             loggedIn = loggedInBool as! Bool
         }
-        // Activity indicator (ie loading icon)
-//        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
-//        activityIndicator.center = CGPointMake(view.center.x, view.center.y)
-//        activityIndicator.startAnimating()
-//        view.addSubview(activityIndicator)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        if loggedIn {
-            navigationItem.leftBarButtonItem = editButtonItem()
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
         ref.observeEventType(.Value, withBlock: { snapshot in
-//            print(snapshot.value)
+            // do some stuff once
             var newDrinks = [Drink]()
             for item in snapshot.children {
                 let drink = Drink(snapshot: item as! FDataSnapshot)
@@ -52,9 +37,12 @@ class DrinkTableViewController: UITableViewController {
             }, withCancelBlock: { error in
                 print(error.description)
         })
-        
-//        activityIndicator.stopAnimating()
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if loggedIn {
+            navigationItem.leftBarButtonItem = editButtonItem()
+        }
     }
 
     // MARK: - Table view data source
@@ -118,7 +106,7 @@ class DrinkTableViewController: UITableViewController {
             }
         }
         else if segue.identifier == "AddItem" {
-            print("Adding new drink.")
+//            print("Adding new drink.")
         }
     }
     
@@ -128,6 +116,7 @@ class DrinkTableViewController: UITableViewController {
                 // Update an existing drink.
                 drinks[selectedIndexPath.row] = drink
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                
                 let drinkRef = drink.ref
                 drinkRef!.updateChildValues(drink.toAnyObject())
             }
@@ -136,6 +125,7 @@ class DrinkTableViewController: UITableViewController {
                 let newIndexPath = NSIndexPath(forRow: drinks.count, inSection: 0)
                 drinks.append(drink)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                
                 let drinkRef = drink.ref
                 drinkRef!.setValue(drink.toAnyObject())
             }

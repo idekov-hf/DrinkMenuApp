@@ -18,6 +18,10 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    @IBOutlet weak var libraryToolbarButton: UIBarButtonItem!
+    @IBOutlet weak var cameraToolbarButton: UIBarButtonItem!
+    
+    
     let cashDelegate = CashTextFieldDelegate()
     
     /*
@@ -45,6 +49,11 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         // Enable the Save button only if the text field has a Valid Drink name.
         checkValidDrinkName()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        cameraToolbarButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
     }
     
     // MARK: UITextFieldDelegate
@@ -82,14 +91,30 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // The info dictionary contains multiple representations of the image, and this uses the original.
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        selectedImage.resize(0.5)
+//        print(selectedImage.size)
+        
+        selectedImage = resizeImage(selectedImage, scale: 0.35)
+        
+//        print(selectedImage.size)
         
         // Set photoImageView to display the selected image.
         photoImageView.image = selectedImage
         // Dismiss the picker.
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func resizeImage(image: UIImage, scale: CGFloat) -> UIImage {
+        
+        let newWidth = image.size.width * scale
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
     
     // MARK: Navigation
@@ -109,14 +134,12 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
             if let drink = drink {
-                print("Drink was edited")
                 drink.name = nameTextField.text ?? ""
                 drink.description = descriptionTextField.text ?? ""
                 drink.price = priceTextField.text ?? ""
                 drink.photo = photoImageView.image
             }
             else {
-                print("Drink was created")
                 let name = nameTextField.text ?? ""
                 let description = descriptionTextField.text ?? ""
                 let price = priceTextField.text ?? ""
@@ -128,30 +151,23 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         }
     }
     
-    // MARK: Actions
-    @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
+    @IBAction func selectImage(sender: UIBarButtonItem) {
         // Hide the keyboard.
         nameTextField.resignFirstResponder()
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .PhotoLibrary
+        
+        if sender == libraryToolbarButton {
+            imagePickerController.sourceType = .PhotoLibrary
+        }
+        else if sender == cameraToolbarButton {
+            imagePickerController.sourceType = .Camera
+        }
+        
         // Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
 
-}
-
-extension UIImage {
-    func resize(scale:CGFloat)-> UIImage {
-        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: size.width*scale, height: size.height*scale)))
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        imageView.image = self
-        UIGraphicsBeginImageContext(imageView.bounds.size)
-        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return result
-    }
 }
 
