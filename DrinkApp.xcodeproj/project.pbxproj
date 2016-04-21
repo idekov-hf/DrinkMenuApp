@@ -17,6 +17,7 @@
 		5D9B33B21C990C0000B6EAFB /* DrinkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B33B11C990C0000B6EAFB /* DrinkAppTests.swift */; };
 		5D9B33BD1C991EFD00B6EAFB /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B33BC1C991EFD00B6EAFB /* Drink.swift */; };
 		5D9B33BE1C991EFD00B6EAFB /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B33BC1C991EFD00B6EAFB /* Drink.swift */; };
+		5DB1769D1CC8EE5600716315 /* libCloudinary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB1769C1CC8EE5600716315 /* libCloudinary.a */; };
 		5DD4F6DE1C998F0A0098A183 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4F6DD1C998F0A0098A183 /* DrinkTableViewCell.swift */; };
 		5DD4F6E01C998FCB0098A183 /* DrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4F6DF1C998FCB0098A183 /* DrinkTableViewController.swift */; };
 		5DD4F6E21C9A58FB0098A183 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD4F6E11C9A58FB0098A183 /* LoginViewController.swift */; };
@@ -51,6 +52,14 @@
 		5D9B33B11C990C0000B6EAFB /* DrinkAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkAppTests.swift; sourceTree = "<group>"; };
 		5D9B33B31C990C0000B6EAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D9B33BC1C991EFD00B6EAFB /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		5DB1769C1CC8EE5600716315 /* libCloudinary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCloudinary.a; sourceTree = "<group>"; };
+		5DB1769F1CC8EE6D00716315 /* CLCloudinary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCloudinary.h; sourceTree = "<group>"; };
+		5DB176A01CC8EE6D00716315 /* CLEagerTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLEagerTransformation.h; sourceTree = "<group>"; };
+		5DB176A11CC8EE6D00716315 /* CLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLayer.h; sourceTree = "<group>"; };
+		5DB176A21CC8EE6D00716315 /* Cloudinary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cloudinary.h; sourceTree = "<group>"; };
+		5DB176A31CC8EE6D00716315 /* CLTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTransformation.h; sourceTree = "<group>"; };
+		5DB176A41CC8EE6D00716315 /* CLUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUploader.h; sourceTree = "<group>"; };
+		5DB176AF1CC929EE00716315 /* DrinkApp-Bridger-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DrinkApp-Bridger-Header.h"; path = "../DrinkApp/DrinkApp-Bridger-Header.h"; sourceTree = "<group>"; };
 		5DD4F6DD1C998F0A0098A183 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		5DD4F6DF1C998FCB0098A183 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
 		5DD4F6E11C9A58FB0098A183 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB8F6F4AC3EBF0C5FC5EE33 /* Pods_DrinkApp.framework in Frameworks */,
+				5DB1769D1CC8EE5600716315 /* libCloudinary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +101,7 @@
 		5D9B33901C990C0000B6EAFB = {
 			isa = PBXGroup;
 			children = (
+				5DB1769E1CC8EE6D00716315 /* Cloudinary */,
 				5D9B339B1C990C0000B6EAFB /* DrinkApp */,
 				5D9B33B01C990C0000B6EAFB /* DrinkAppTests */,
 				5D9B339A1C990C0000B6EAFB /* Products */,
@@ -135,9 +146,24 @@
 			path = DrinkAppTests;
 			sourceTree = "<group>";
 		};
+		5DB1769E1CC8EE6D00716315 /* Cloudinary */ = {
+			isa = PBXGroup;
+			children = (
+				5DB1769F1CC8EE6D00716315 /* CLCloudinary.h */,
+				5DB176A01CC8EE6D00716315 /* CLEagerTransformation.h */,
+				5DB176A11CC8EE6D00716315 /* CLLayer.h */,
+				5DB176A21CC8EE6D00716315 /* Cloudinary.h */,
+				5DB176A31CC8EE6D00716315 /* CLTransformation.h */,
+				5DB176A41CC8EE6D00716315 /* CLUploader.h */,
+				5DB176AF1CC929EE00716315 /* DrinkApp-Bridger-Header.h */,
+			);
+			path = Cloudinary;
+			sourceTree = "<group>";
+		};
 		EC5DA4A115B99A8656BBC9B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DB1769C1CC8EE5600716315 /* libCloudinary.a */,
 				40711BE3557A0D1EEE778817 /* Pods_DrinkApp.framework */,
 				25FECCA1909F236FAD35749A /* Pods_DrinkAppTests.framework */,
 			);
@@ -486,9 +512,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DrinkApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iavordekov.DrinksMenuApp;
 				PRODUCT_NAME = Beverages;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DrinkApp/DrinkApp-Bridger-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -502,9 +533,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DrinkApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iavordekov.DrinksMenuApp;
 				PRODUCT_NAME = Beverages;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DrinkApp/DrinkApp-Bridger-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

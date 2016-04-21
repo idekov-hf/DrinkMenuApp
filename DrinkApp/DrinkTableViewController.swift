@@ -40,6 +40,7 @@ class DrinkTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         if loggedIn {
             navigationItem.leftBarButtonItem = editButtonItem()
         }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DrinkViewController: UIViewController {
     
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
@@ -23,6 +23,8 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     
     let cashDelegate = CashTextFieldDelegate()
+    
+    // MARK: View Lifecycle Methods
     
     /*
     This value is either passed by DrinkTableViewController in prepareForSegue(_:sender:)
@@ -56,68 +58,8 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         cameraToolbarButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
     }
     
-    // MARK: UITextFieldDelegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        // Hide the keyboard.
-        if textField == nameTextField {
-            nameTextField.resignFirstResponder()
-            descriptionTextField.becomeFirstResponder()
-        }
-        else if textField == descriptionTextField {
-            descriptionTextField.resignFirstResponder()
-            priceTextField.becomeFirstResponder()
-        }
-        return true
-    }
+    // MARK: IBActions
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        checkValidDrinkName()
-        if textField == nameTextField {
-            navigationItem.title = textField.text
-        }
-    }
-    
-    func checkValidDrinkName() {
-        // Disable the Save button if the text field is empty.
-        let text = nameTextField.text ?? ""
-        saveButton.enabled = !text.isEmpty
-    }
-    
-    // MARK: UIImagePickerControllerDelegate
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        // Dismiss the picker if the user canceled.
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        // The info dictionary contains multiple representations of the image, and this uses the original.
-        var selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-//        print(selectedImage.size)
-        
-        selectedImage = resizeImage(selectedImage, scale: 0.35)
-        
-//        print(selectedImage.size)
-        
-        // Set photoImageView to display the selected image.
-        photoImageView.image = selectedImage
-        // Dismiss the picker.
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func resizeImage(image: UIImage, scale: CGFloat) -> UIImage {
-        
-        let newWidth = image.size.width * scale
-        let newHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
-    }
-    
-    // MARK: Navigation
     @IBAction func cancel(sender: UIBarButtonItem) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInAddDrinkMode = presentingViewController is UINavigationController
@@ -129,6 +71,26 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
             navigationController!.popViewControllerAnimated(true)
         }
     }
+    
+    @IBAction func selectImage(sender: UIBarButtonItem) {
+        // Hide the keyboard.
+        nameTextField.resignFirstResponder()
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        if sender == libraryToolbarButton {
+            imagePickerController.sourceType = .PhotoLibrary
+        }
+        else if sender == cameraToolbarButton {
+            imagePickerController.sourceType = .Camera
+        }
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+    
+    // MARK: Navigation
     
     // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -151,23 +113,68 @@ class DrinkViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         }
     }
     
-    @IBAction func selectImage(sender: UIBarButtonItem) {
-        // Hide the keyboard.
-        nameTextField.resignFirstResponder()
-        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        let imagePickerController = UIImagePickerController()
+    // MARK: Helper Methods
+    
+    func checkValidDrinkName() {
+        // Disable the Save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.enabled = !text.isEmpty
+    }
+    
+    func resizeImage(image: UIImage, scale: CGFloat) -> UIImage {
+        let newWidth = image.size.width * scale
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
-        if sender == libraryToolbarButton {
-            imagePickerController.sourceType = .PhotoLibrary
-        }
-        else if sender == cameraToolbarButton {
-            imagePickerController.sourceType = .Camera
-        }
-        
-        // Make sure ViewController is notified when the user picks an image.
-        imagePickerController.delegate = self
-        presentViewController(imagePickerController, animated: true, completion: nil)
+        return newImage
     }
 
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension DrinkViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // The info dictionary contains multiple representations of the image, and this uses the original.
+        var selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        selectedImage = resizeImage(selectedImage, scale: 0.35)
+        
+        // Set photoImageView to display the selected image.
+        photoImageView.image = selectedImage
+        // Dismiss the picker.
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+}
+
+// MARK: - UITextFieldDelegate
+extension DrinkViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        checkValidDrinkName()
+        
+        if textField == nameTextField {
+            navigationItem.title = textField.text
+        }
+        
+    }
+    
 }
 
