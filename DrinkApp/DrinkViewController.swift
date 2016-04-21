@@ -109,7 +109,7 @@ class DrinkViewController: UIViewController {
                 let photo = photoImageView.image
                 
                 // Set the drink to be passed to DrinkTableViewController after the unwind segue.
-                drink = Drink(name: name, photo: photo, price: price, description: description)
+                drink = Drink(name: name, price: price, photo: photo, description: description)
             }
         }
     }
