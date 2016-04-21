@@ -11,6 +11,7 @@ import UIKit
 class DrinkViewController: UIViewController {
     
     // MARK: Properties
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
@@ -24,13 +25,13 @@ class DrinkViewController: UIViewController {
     
     let cashDelegate = CashTextFieldDelegate()
     
-    // MARK: View Lifecycle Methods
-    
     /*
     This value is either passed by DrinkTableViewController in prepareForSegue(_:sender:)
     or constructed as part of adding a new drink
     */
     var drink: Drink?
+    
+    // MARK: View Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,17 +121,6 @@ class DrinkViewController: UIViewController {
         let text = nameTextField.text ?? ""
         saveButton.enabled = !text.isEmpty
     }
-    
-    func resizeImage(image: UIImage, scale: CGFloat) -> UIImage {
-        let newWidth = image.size.width * scale
-        let newHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
-    }
 
 }
 
@@ -143,10 +133,9 @@ extension DrinkViewController: UIImagePickerControllerDelegate, UINavigationCont
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        // The info dictionary contains multiple representations of the image, and this uses the original.
-        var selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        selectedImage = resizeImage(selectedImage, scale: 0.35)
+        // The info dictionary contains multiple representations of the image, and this uses the original.
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         // Set photoImageView to display the selected image.
         photoImageView.image = selectedImage
