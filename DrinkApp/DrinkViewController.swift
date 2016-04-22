@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DrinkViewController: UIViewController {
+class DrinkViewController: UIViewController, CLUploaderDelegate {
     
     // MARK: Properties
     
@@ -21,6 +21,7 @@ class DrinkViewController: UIViewController {
     
     @IBOutlet weak var libraryToolbarButton: UIBarButtonItem!
     @IBOutlet weak var cameraToolbarButton: UIBarButtonItem!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     
     let cashDelegate = CashTextFieldDelegate()
@@ -52,11 +53,11 @@ class DrinkViewController: UIViewController {
         
         // Enable the Save button only if the text field has a Valid Drink name.
         checkValidDrinkName()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        
         cameraToolbarButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
+        
+        progressBar.hidden = true
+        
     }
     
     // MARK: IBActions
@@ -71,6 +72,33 @@ class DrinkViewController: UIViewController {
         else {
             navigationController!.popViewControllerAnimated(true)
         }
+    }
+    
+    @IBAction func save(sender: UIBarButtonItem) {
+        
+        let name = nameTextField.text ?? ""
+        let description = descriptionTextField.text ?? ""
+        let price = priceTextField.text ?? ""
+        let photo = photoImageView.image
+        
+        // Set the drink to be passed to DrinkTableViewController after the unwind segue.
+        if let drink = drink {
+            drink.name = name
+            drink.description = description
+            drink.price = price
+            drink.photo = photo
+        }
+        else {
+            drink = Drink(name: name, price: price, photo: photo, description: description)
+        }
+        
+        if let photo = photo {
+            uploadImage(photo)
+        }
+        else {
+            print("uploadImage not called: photo == nil")
+        }
+    
     }
     
     @IBAction func selectImage(sender: UIBarButtonItem) {
@@ -91,35 +119,60 @@ class DrinkViewController: UIViewController {
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
-    // MARK: Navigation
-    
-    // This method lets you configure a view controller before it's presented.
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if saveButton === sender {
-            if let drink = drink {
-                drink.name = nameTextField.text ?? ""
-                drink.description = descriptionTextField.text ?? ""
-                drink.price = priceTextField.text ?? ""
-                drink.photo = photoImageView.image
-            }
-            else {
-                let name = nameTextField.text ?? ""
-                let description = descriptionTextField.text ?? ""
-                let price = priceTextField.text ?? ""
-                let photo = photoImageView.image
-                
-                // Set the drink to be passed to DrinkTableViewController after the unwind segue.
-                drink = Drink(name: name, price: price, photo: photo, description: description)
-            }
-        }
-    }
-    
     // MARK: Helper Methods
     
     func checkValidDrinkName() {
         // Disable the Save button if the text field is empty.
         let text = nameTextField.text ?? ""
         saveButton.enabled = !text.isEmpty
+    }
+    
+    func uploadImage(image: UIImage) {
+        guard let imgData = UIImageJPEGRepresentation(image, 0.3) else {
+            print("Image was not successfully converted into NSData")
+            return
+        }
+        
+        let clURL = CLCloudinary()
+        clURL.config().setValue("ivdekov", forKey: "cloud_name")
+        clURL.config().setValue("799619976626956", forKey: "api_key")
+        clURL.config().setValue("XXmLLeGBnf3UD9GfigAifXJcG_E", forKey: "api_secret")
+        
+        let clUploader = CLUploader(clURL, delegate: self)
+        
+        progressBar.hidden = false
+        
+        clUploader.upload(imgData, options: ["public_id" : "\(drink!.ref.key!)"], withCompletion: { successResult, errorResult, code, context in
+            
+            if errorResult == nil {
+                
+                guard let url = successResult["url"] as? String else {
+                    print("could not find value of key url in result")
+                    return
+                }
+                
+                print(url)
+                
+                if let drink = self.drink {
+                    drink.photoURL = url
+                }
+                else {
+                    print("drink == nil")
+                }
+                
+                self.performSegueWithIdentifier("unwindSegue", sender: self)
+                
+            }
+            else {
+                print(errorResult)
+            }
+            
+            }, andProgress: {bytesWritten, totalBytesWritten, totalBytesExpectedToWrite, context in
+                
+                self.progressBar.progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+                
+            }
+        )
     }
 
 }

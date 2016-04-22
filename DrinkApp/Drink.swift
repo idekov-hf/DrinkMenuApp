@@ -21,8 +21,9 @@ class Drink {
     var photo: UIImage?
     var price: String
     var description: String
-    var photoLink: String?
-    var ref: Firebase?
+    var photoURL: String?
+    var photoDownloaded = false
+    var ref: Firebase
     
     // MARK: Init Methods
     
@@ -40,7 +41,6 @@ class Drink {
         if name.isEmpty {
             return nil
         }
-        
     }
     
     init(snapshot: FDataSnapshot) {
@@ -48,8 +48,8 @@ class Drink {
         name = snapshot.value["name"] as! String
         description = snapshot.value["description"] as! String
         price = snapshot.value["price"] as! String
+        photoURL = snapshot.value["photoURL"] as? String
         ref = snapshot.ref
-        
     }
     
     // MARK: Helper Methods
@@ -59,21 +59,21 @@ class Drink {
         return [
             "name" : name,
             "description" : description,
-            "price" : price
-        ]
-        
+            "price" : price,
+            "photoURL" : photoURL!
+        ] 
     }
-    
-    /*
-    func encodeImage() -> String {
-        let imageData = UIImagePNGRepresentation(photo!)
-        return imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-    }
-    
-    func decodeImage(string: String) -> UIImage {
-        let decodedData = NSData(base64EncodedString: string, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-        return UIImage(data: decodedData!)!
-    }
-    */
 
 }
+
+/*
+ func encodeImage() -> String {
+ let imageData = UIImagePNGRepresentation(photo!)
+ return imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+ }
+ 
+ func decodeImage(string: String) -> UIImage {
+ let decodedData = NSData(base64EncodedString: string, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+ return UIImage(data: decodedData!)!
+ }
+ */

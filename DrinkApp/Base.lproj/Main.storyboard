@@ -22,9 +22,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Qus-NJ-yxg">
-                                            <rect key="frame" x="0.0" y="0.0" width="81" height="144"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qta-CU-os2">
                                             <rect key="frame" x="98" y="8" width="427" height="24"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -43,6 +40,12 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qus-NJ-yxg">
+                                            <rect key="frame" x="9" y="-1" width="81" height="144"/>
+                                        </imageView>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FDr-db-qTP">
+                                            <rect key="frame" x="39" y="61" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="sq3-ec-nBY" firstAttribute="top" secondItem="LLH-KY-Jw7" secondAttribute="topMargin" constant="30" id="0fD-Ir-4mr"/>
@@ -50,17 +53,18 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="atU-QQ-RBe" secondAttribute="trailing" id="BD2-v9-co6"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="sq3-ec-nBY" secondAttribute="bottom" id="EGm-Y7-xAG"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="sq3-ec-nBY" secondAttribute="trailing" id="Ijo-CD-1cA"/>
-                                        <constraint firstItem="Qus-NJ-yxg" firstAttribute="top" secondItem="LLH-KY-Jw7" secondAttribute="top" id="Iwm-NM-rUp"/>
+                                        <constraint firstItem="Qus-NJ-yxg" firstAttribute="top" secondItem="LLH-KY-Jw7" secondAttribute="top" constant="-1" id="Iwm-NM-rUp"/>
                                         <constraint firstItem="sq3-ec-nBY" firstAttribute="leading" secondItem="LLH-KY-Jw7" secondAttribute="leadingMargin" constant="89" id="KWz-Qq-7O4"/>
-                                        <constraint firstItem="sq3-ec-nBY" firstAttribute="leading" secondItem="Qus-NJ-yxg" secondAttribute="trailing" constant="16" id="LLq-G9-u0U"/>
+                                        <constraint firstItem="sq3-ec-nBY" firstAttribute="leading" secondItem="Qus-NJ-yxg" secondAttribute="trailing" constant="7" id="LLq-G9-u0U"/>
                                         <constraint firstItem="qta-CU-os2" firstAttribute="leading" secondItem="LLH-KY-Jw7" secondAttribute="leadingMargin" constant="90" id="Meu-vk-p8x"/>
                                         <constraint firstAttribute="topMargin" secondItem="atU-QQ-RBe" secondAttribute="top" id="Nae-Av-Wct"/>
-                                        <constraint firstItem="Qus-NJ-yxg" firstAttribute="leading" secondItem="LLH-KY-Jw7" secondAttribute="leading" id="lIb-ej-yWa"/>
+                                        <constraint firstItem="Qus-NJ-yxg" firstAttribute="leading" secondItem="LLH-KY-Jw7" secondAttribute="leading" constant="9" id="lIb-ej-yWa"/>
                                         <constraint firstItem="atU-QQ-RBe" firstAttribute="leading" secondItem="qta-CU-os2" secondAttribute="trailing" constant="8" id="mjw-OQ-q98"/>
-                                        <constraint firstAttribute="bottom" secondItem="Qus-NJ-yxg" secondAttribute="bottom" constant="-1" id="nHo-g2-nif"/>
+                                        <constraint firstAttribute="bottom" secondItem="Qus-NJ-yxg" secondAttribute="bottom" id="nHo-g2-nif"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="FDr-db-qTP" id="117-Kt-rGO"/>
                                     <outlet property="descriptionLabel" destination="sq3-ec-nBY" id="VkO-TZ-4xI"/>
                                     <outlet property="nameLabel" destination="qta-CU-os2" id="Kpf-mH-iTd"/>
                                     <outlet property="photoImageView" destination="Qus-NJ-yxg" id="8IX-1P-D7V"/>
@@ -140,8 +144,16 @@
                                             <constraint firstAttribute="trailing" secondItem="bp8-YF-NN4" secondAttribute="trailing" id="r4n-8H-Tod"/>
                                         </constraints>
                                     </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cCs-iH-WUM">
+                                        <rect key="frame" x="200" y="245" width="200" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="DaM-T8-0xi"/>
+                                        </constraints>
+                                    </progressView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="cCs-iH-WUM" firstAttribute="centerY" secondItem="ktD-DH-4GY" secondAttribute="centerY" id="5Ch-0d-shh"/>
+                                    <constraint firstItem="cCs-iH-WUM" firstAttribute="centerX" secondItem="ktD-DH-4GY" secondAttribute="centerX" id="831-P7-UDU"/>
                                     <constraint firstItem="SYy-16-tRE" firstAttribute="width" secondItem="ktD-DH-4GY" secondAttribute="width" id="HKb-3Y-yyR"/>
                                     <constraint firstAttribute="trailing" secondItem="SYy-16-tRE" secondAttribute="trailing" id="Umf-3f-CJJ"/>
                                     <constraint firstAttribute="bottom" secondItem="SYy-16-tRE" secondAttribute="bottom" id="W4L-vI-Waa"/>
@@ -187,7 +199,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="wD1-X5-f4Y">
                             <connections>
-                                <segue destination="mEV-Yr-lTo" kind="unwind" unwindAction="unwindToDrinkList:" id="gbM-L5-u1F"/>
+                                <action selector="save:" destination="BYZ-38-t0r" id="oz1-0Z-ZHn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -198,7 +210,9 @@
                         <outlet property="nameTextField" destination="bp8-YF-NN4" id="54W-M0-cyp"/>
                         <outlet property="photoImageView" destination="kVS-Xu-pPt" id="hPY-as-kz2"/>
                         <outlet property="priceTextField" destination="edf-vX-fkS" id="Qrk-sS-KD9"/>
+                        <outlet property="progressBar" destination="cCs-iH-WUM" id="9pZ-Ah-zaW"/>
                         <outlet property="saveButton" destination="wD1-X5-f4Y" id="WRs-y3-mBM"/>
+                        <segue destination="mEV-Yr-lTo" kind="unwind" identifier="unwindSegue" unwindAction="unwindToDrinkList:" id="1Dg-Oe-AGO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

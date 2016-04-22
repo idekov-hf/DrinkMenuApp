@@ -33,7 +33,6 @@ class DrinkTableViewController: UITableViewController {
             }
             self.drinks = newDrinks
             self.tableView.reloadData()
-            
             }, withCancelBlock: { error in
                 print(error.description)
         })
@@ -44,8 +43,47 @@ class DrinkTableViewController: UITableViewController {
         if loggedIn {
             navigationItem.leftBarButtonItem = editButtonItem()
         }
+        
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func loadImage(drink: Drink, indexPath: NSIndexPath, cell: DrinkTableViewCell) {
+        
+        if let urlString = drink.photoURL?.stringByReplacingOccurrencesOfString("http", withString: "https"), url = NSURL(string: urlString) {
+            
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
+                
+                guard let imgData = NSData(contentsOfURL: url) else {
+                    print("imgData not created")
+                    return
+                }
+                
+                let image = UIImage(data: imgData)
+                
+                drink.photo = image
+                
+                drink.photoDownloaded = true
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                    cell.activityIndicator.stopAnimating()
+                
+                    cell.photoImageView.image = image
+                
+                })
+            }
+            
+        }
+        
+        else {
+            print("urlString or url failed")
+        }
+        
+    }
+    
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -68,7 +106,14 @@ class DrinkTableViewController: UITableViewController {
         cell.nameLabel.text = drink.name
         cell.priceLabel.text = drink.price
         cell.descriptionLabel.text = drink.description
-        cell.photoImageView.image = drink.photo
+        
+        if drink.photoDownloaded == false {
+            cell.activityIndicator.startAnimating()
+            loadImage(drink, indexPath: indexPath, cell: cell)
+        }
+        else {
+            cell.photoImageView.image = drink.photo
+        }
         
         return cell
     }
@@ -84,7 +129,7 @@ class DrinkTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete drink data on Firebase
             let drinkRef = drinks[indexPath.row].ref
-            drinkRef?.removeValue()
+            drinkRef.removeValue()
             // Delete the row from the data source
             drinks.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
@@ -107,7 +152,6 @@ class DrinkTableViewController: UITableViewController {
             }
         }
         else if segue.identifier == "AddItem" {
-//            print("Adding new drink.")
         }
     }
     
@@ -119,7 +163,7 @@ class DrinkTableViewController: UITableViewController {
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
                 
                 let drinkRef = drink.ref
-                drinkRef!.updateChildValues(drink.toAnyObject())
+                drinkRef.updateChildValues(drink.toAnyObject())
             }
             else {
                 // Add a new drink.
@@ -128,7 +172,7 @@ class DrinkTableViewController: UITableViewController {
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
                 
                 let drinkRef = drink.ref
-                drinkRef!.setValue(drink.toAnyObject())
+                drinkRef.setValue(drink.toAnyObject())
             }
         }
         else if let sourceViewController = sender.sourceViewController as? LoginViewController {
