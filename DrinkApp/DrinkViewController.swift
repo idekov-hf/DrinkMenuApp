@@ -128,7 +128,7 @@ class DrinkViewController: UIViewController, CLUploaderDelegate {
     }
     
     func uploadImage(image: UIImage) {
-        guard let imgData = UIImageJPEGRepresentation(image, 0.1) else {
+        guard let imgData = UIImageJPEGRepresentation(image, 0.2) else {
             print("Image was not successfully converted into NSData")
             return
         }
@@ -175,9 +175,30 @@ class DrinkViewController: UIViewController, CLUploaderDelegate {
         )
     }
     
-    func resizeImage(image: UIImage, scale: CGFloat) -> UIImage {
-        let newWidth = image.size.width * scale
-        let newHeight = image.size.height * scale
+    func resizeImage(image: UIImage, maxLength: CGFloat) -> UIImage {
+        
+        let imageWidth = image.size.width
+        let imageHeight = image.size.height
+        
+        var newWidth: CGFloat
+        var newHeight: CGFloat
+        var scale: CGFloat
+        
+        if imageWidth < maxLength && imageHeight < maxLength {
+            newWidth = image.size.width
+            newHeight = image.size.height
+        }
+        else if imageWidth > imageHeight {
+            newWidth = maxLength
+            scale = newWidth / imageWidth
+            newHeight = imageHeight * scale
+        }
+        else {
+            newHeight = maxLength
+            scale = newHeight / imageHeight
+            newWidth = imageWidth * scale
+        }
+        
         UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
         image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -203,7 +224,7 @@ extension DrinkViewController: UIImagePickerControllerDelegate, UINavigationCont
         
         print(selectedImage.size)
         
-        selectedImage = resizeImage(selectedImage, scale: 0.4)
+        selectedImage = resizeImage(selectedImage, maxLength: 1200)
         
         print(selectedImage.size)
         

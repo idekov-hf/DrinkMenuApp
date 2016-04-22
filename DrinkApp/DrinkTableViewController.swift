@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class DrinkTableViewController: UITableViewController {
+class DrinkTableViewController: UITableViewController, CLUploaderDelegate {
     
     // MARK: Properties
     var drinks = [Drink]()
@@ -129,6 +129,10 @@ class DrinkTableViewController: UITableViewController {
             // Delete drink data on Firebase
             let drinkRef = drinks[indexPath.row].ref
             drinkRef.removeValue()
+            
+            // Delete the drink image on Cloudinary
+            deleteCloudinaryImage(indexPath.row)
+            
             // Delete the row from the data source
             drinks.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
@@ -187,5 +191,25 @@ class DrinkTableViewController: UITableViewController {
         else {
             performSegueWithIdentifier("LogIn", sender: sender)
         }
+    }
+    
+    // Delete the image with the associated row index from the Cloudinary server
+    func deleteCloudinaryImage(index: Int) {
+        
+        if let imgName = drinks[index].ref.key {
+            let clURL = CLCloudinary()
+            clURL.config().setValue("ivdekov", forKey: "cloud_name")
+            clURL.config().setValue("799619976626956", forKey: "api_key")
+            clURL.config().setValue("XXmLLeGBnf3UD9GfigAifXJcG_E", forKey: "api_secret")
+            
+            let clUploader = CLUploader(clURL, delegate: self)
+            
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
+                
+                clUploader.destroy(imgName, options: nil)
+                
+            }
+        }
+        
     }
 }
