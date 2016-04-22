@@ -50,6 +50,8 @@ class DrinkTableViewController: UITableViewController {
         super.viewDidAppear(animated)
     }
     
+    // Downloads the image data asynchronously
+    // Updates the UI on the main queue
     func loadImage(drink: Drink, indexPath: NSIndexPath, cell: DrinkTableViewCell) {
         
         if let urlString = drink.photoURL?.stringByReplacingOccurrencesOfString("http", withString: "https"), url = NSURL(string: urlString) {
@@ -65,8 +67,6 @@ class DrinkTableViewController: UITableViewController {
                 
                 drink.photo = image
                 
-                drink.photoDownloaded = true
-                
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
                     cell.activityIndicator.stopAnimating()
@@ -75,7 +75,6 @@ class DrinkTableViewController: UITableViewController {
                 
                 })
             }
-            
         }
         
         else {
@@ -107,7 +106,7 @@ class DrinkTableViewController: UITableViewController {
         cell.priceLabel.text = drink.price
         cell.descriptionLabel.text = drink.description
         
-        if drink.photoDownloaded == false {
+        if drink.photo == nil {
             cell.activityIndicator.startAnimating()
             loadImage(drink, indexPath: indexPath, cell: cell)
         }

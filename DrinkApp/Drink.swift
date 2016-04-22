@@ -22,7 +22,6 @@ class Drink {
     var price: String
     var description: String
     var photoURL: String?
-    var photoDownloaded = false
     var ref: Firebase
     
     // MARK: Init Methods

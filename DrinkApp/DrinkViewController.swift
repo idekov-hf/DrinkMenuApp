@@ -128,7 +128,7 @@ class DrinkViewController: UIViewController, CLUploaderDelegate {
     }
     
     func uploadImage(image: UIImage) {
-        guard let imgData = UIImageJPEGRepresentation(image, 0.3) else {
+        guard let imgData = UIImageJPEGRepresentation(image, 0.1) else {
             print("Image was not successfully converted into NSData")
             return
         }
@@ -174,7 +174,18 @@ class DrinkViewController: UIViewController, CLUploaderDelegate {
             }
         )
     }
-
+    
+    func resizeImage(image: UIImage, scale: CGFloat) -> UIImage {
+        let newWidth = image.size.width * scale
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
 }
 
 // MARK: - UIImagePickerControllerDelegate
@@ -188,7 +199,13 @@ extension DrinkViewController: UIImagePickerControllerDelegate, UINavigationCont
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         // The info dictionary contains multiple representations of the image, and this uses the original.
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        print(selectedImage.size)
+        
+        selectedImage = resizeImage(selectedImage, scale: 0.4)
+        
+        print(selectedImage.size)
         
         // Set photoImageView to display the selected image.
         photoImageView.image = selectedImage
