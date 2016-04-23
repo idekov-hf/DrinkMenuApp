@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'DrinkApp' do
 	pod ‘Firebase’, ‘>=2.5.0’
+	pod "Cloudinary"
 end
 
 target 'DrinkAppTests' do

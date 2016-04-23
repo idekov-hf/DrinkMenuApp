@@ -7,34 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012A7E018F3D34F159894EBD7EACACF9 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = C30DAF734CAAF2F494DE720B2386CFFF /* Empty.m */; };
-		191DE2EB9A35585AE0A88BA9F833A1F4 /* FTransactionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = B9A06FFED058218134C702A407304A9F /* FTransactionResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		012A7E018F3D34F159894EBD7EACACF9 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5369BDA303305480A248416853BC21D9 /* Empty.m */; };
+		16D235F431BE17C972CB8DD3A86B392E /* CLUploader.h in Headers */ = {isa = PBXBuildFile; fileRef = C5B5007B608371B3D96F59F443965BCE /* CLUploader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		191DE2EB9A35585AE0A88BA9F833A1F4 /* FTransactionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA6BDD374FF6807DE2CF4BB3C2E5FBF /* FTransactionResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19A18636C94C9C1080E771E2DE8F2297 /* Pods-DrinkAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF63449D64CA0709A81FCD59A3D7CAC3 /* Pods-DrinkAppTests-dummy.m */; };
-		1C3EF85CD30E6FF2E51471BD5B3CEB29 /* Firebase.h in Headers */ = {isa = PBXBuildFile; fileRef = 99994D7C8CADD905BE2B9BBD61C5DAD8 /* Firebase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D925BB011B04DDED982C7946571A67A /* FAuthType.h in Headers */ = {isa = PBXBuildFile; fileRef = 891B0E2082543D26FADFA72F524E77AF /* FAuthType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D9D7FF5237C8CC91EF58DC45AC274FB /* Firebase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C0143DCE5A276FD546BC307BA6384A /* Firebase-dummy.m */; };
-		239B10F388840841389B7F09648735B1 /* FEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = 817BCDAD66E1493A462C3D125BB8A039 /* FEventType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F1496011DBBB75777645194AAAFE92D /* FirebaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA7C78DB3882A984A96D28F8AA2D41 /* FirebaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C3EF85CD30E6FF2E51471BD5B3CEB29 /* Firebase.h in Headers */ = {isa = PBXBuildFile; fileRef = 462B22152870707495E6EAEA47A7C726 /* Firebase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D925BB011B04DDED982C7946571A67A /* FAuthType.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FABC04A7441756EE074F885A3B9B34D /* FAuthType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D9D7FF5237C8CC91EF58DC45AC274FB /* Firebase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0ED9F64A713D5E9A6387882E0541 /* Firebase-dummy.m */; };
+		239B10F388840841389B7F09648735B1 /* FEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E98C46F89C5EB569B3795B02894F6C7 /* FEventType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27724BD4C72DC2521D5504A99BBD3AC0 /* NSDictionary+CLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F3C1336FDE640349FBF5C8DACEE1A /* NSDictionary+CLUtilities.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2F1496011DBBB75777645194AAAFE92D /* FirebaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = A1168C12B3A0354044AC8F7A5F082BE0 /* FirebaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B02A4282B63E66A715A4E4EB1B7AB /* NSString+CLURLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CE9312A375C55D2A114A50FAFCF7D29 /* NSString+CLURLEncoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CF2ECB2B9E11A520B73981A8FFB0BFE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2562A3079A7CC4487933C167DCA75FBA /* SystemConfiguration.framework */; };
-		4D75CF0089B20355B17A851513C4A002 /* FQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = A2E2AC3209047C6550E8D065954966F5 /* FQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		60F9139BDD38565B78214C4FC5F5729D /* Firebase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A35E3E3F0CCA6B0B0A5E20810C135EA2 /* Firebase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6646DA26298257396C7FFE141BB84CC3 /* FirebaseServerValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 55000294CC62B92A597CC865BC53ECFC /* FirebaseServerValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4254A0FF8DA0A7889597E2371ACD18F3 /* CLEagerTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 85BD3664C1F4EE13F7A60E7700571063 /* CLEagerTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4742ACAD556BEC7963C7E93895E37B6E /* NSDictionary+CLUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = DD5FA3C7B58E39D62311D785F97D991B /* NSDictionary+CLUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D75CF0089B20355B17A851513C4A002 /* FQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BF687367F5F34161EBC6B2C307E1C862 /* FQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		545A3333A816322691BB3928D464361B /* CLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDCE08F2E51AB98ED38CF9BCD5C16B9 /* CLLayer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		56918CEF99CB3C40340A64C4DE60BAAB /* Pods-DrinkApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E9FC4E20CE4F3A89FE75C6F2902D34 /* Pods-DrinkApp-dummy.m */; };
+		60F9139BDD38565B78214C4FC5F5729D /* Firebase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDE4D38953A16D4E320526190497E269 /* Firebase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6646DA26298257396C7FFE141BB84CC3 /* FirebaseServerValue.h in Headers */ = {isa = PBXBuildFile; fileRef = D1052D202C908D366AB35D4126CE7623 /* FirebaseServerValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67104E475293E0541E505C99D0A53568 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760DB9A2C943C8821FF3CD8C31DEA5DD /* Foundation.framework */; };
+		780F9EE18BB762F6AF0C775FC7EE40F0 /* CLCloudinary.h in Headers */ = {isa = PBXBuildFile; fileRef = 222E0D8BBC18F047F7D232B3F352893A /* CLCloudinary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85A4F602CA6B100539E601AE38A2D9C0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631C7879B4FF5DAF62305D0247AF58AD /* CFNetwork.framework */; };
-		9239B5524B739A87A34D706CCFE2A644 /* Pods-DrinkApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E9FC4E20CE4F3A89FE75C6F2902D34 /* Pods-DrinkApp-dummy.m */; };
+		8F4BB859042D9C93C10A8FAD57420E5C /* Cloudinary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FEF07B35BAFBF46014CA38DF1A61DF /* Cloudinary-dummy.m */; };
+		950DCD33D75D3E7D111A0EF0FDF5D31B /* Pods-DrinkApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A9C6BA80EB82D80B371F18F422B218 /* Pods-DrinkApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9927F549986D46D5A68563FB9BA14573 /* CLEagerTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FF09AC8CE63C84F8250DAFA0D192D0 /* CLEagerTransformation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A316954141655BB713D4F68EAA8B376F /* CLUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C63CDE2A589FBE3AB1C8B12FEC51BC /* CLUploader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AA4C2CA210326AAF5DF395979A694760 /* CLTransformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D4E7C868C4559D40FCCBD552D914E1 /* CLTransformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B58FB9F2A75E87D11F761FBF36731233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760DB9A2C943C8821FF3CD8C31DEA5DD /* Foundation.framework */; };
+		B7C3122FC670D40719751B21330BD6EC /* Cloudinary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E73ABA0F45D0EBE28B22327E5748F52 /* Cloudinary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCB05E750CD7C4C51E98BAFD617AEC2F /* CLCloudinary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CF2E967F03490170F36D1D1CA4844B /* CLCloudinary.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		BD050B295EC63FCBD295EBA18A2F27EB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7D8DF493D53A880E6D325B5C9F793F /* Security.framework */; };
 		C1415AEE84D2AD35FA8C2C699E131D2D /* Pods-DrinkAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF7CDECD330F6311F412DAFACCB7D84E /* Pods-DrinkAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C23FCF31260D47CEC1494A292DAA1A1E /* FAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = CDBB06694A091085C1CDD755EBC4B578 /* FAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD2A43652247878BD6A410A6F8AC2B2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760DB9A2C943C8821FF3CD8C31DEA5DD /* Foundation.framework */; };
-		D9F8F5F7BD8D5724FF15B6FDF8A29C37 /* Pods-DrinkApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A9C6BA80EB82D80B371F18F422B218 /* Pods-DrinkApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB05A9DD8244D10C28B6915C514AE15F /* FMutableData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E547A224BA2BD4DB4A5DB059D7F5898 /* FMutableData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C23FCF31260D47CEC1494A292DAA1A1E /* FAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = C4B734C0F49399515BE44805C8BF82A1 /* FAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C42B3AEFA10DBE9EE96400780CF10655 /* NSString+CLURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ABD6D63442820D2D02A3FF6B80FB1C /* NSString+CLURLEncoding.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C87CFCA94F99E62EEB3F3B0A3C0A9BD4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7D8DF493D53A880E6D325B5C9F793F /* Security.framework */; };
+		D55A89C3B5D82D0F21C75CD59C651392 /* CLTransformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC32655147C9403AF19BF7496A0664 /* CLTransformation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DA2B2D205B75820C65A7CFD079710733 /* Cloudinary.h in Headers */ = {isa = PBXBuildFile; fileRef = B5CAC880455EF333284AF83AAAA701E8 /* Cloudinary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB05A9DD8244D10C28B6915C514AE15F /* FMutableData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1362D4371D23351A75E9404B5AFEFD09 /* FMutableData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFEBECFC61D01720EA26E0FC844DE04D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760DB9A2C943C8821FF3CD8C31DEA5DD /* Foundation.framework */; };
-		E60FA42EEC3ECC48701DB55986D25D69 /* FConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 9726FDC67EF47C28FEC9A974D42B81B4 /* FConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8B534D15D2B25919ACD898217266891 /* FDataSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 85FE7BFEAA7B743553B973A7168CDD98 /* FDataSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60FA42EEC3ECC48701DB55986D25D69 /* FConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = D86B6B0ADCF1D6D16200F1D7E97063F2 /* FConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8B534D15D2B25919ACD898217266891 /* FDataSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = C5F2D433BC830C889818AA75CC61900F /* FDataSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8537CB4C08357444D66F92A99CE6B32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760DB9A2C943C8821FF3CD8C31DEA5DD /* Foundation.framework */; };
+		FAF95D9CF354B750CC46337AA5DA514E /* CLLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C4B1C840A3D681CE5BE78F3F52077263 /* CLLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F9B9BD7CD66C0F2B5BEF3D293FA938DF /* PBXContainerItemProxy */ = {
+		966AE3743EAEC28693444B702BCCF933 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBBEF6AA8E8483FE9C432B16A32B8362;
+			remoteInfo = Cloudinary;
+		};
+		BBD2D61DBEC755D83CB3CE261491D13D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -45,60 +71,83 @@
 
 /* Begin PBXFileReference section */
 		05263C91679FF477DE38D35282804D3B /* Pods-DrinkAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DrinkAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		104481390B1098325AD2AFB70FC78878 /* Firebase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-prefix.pch"; sourceTree = "<group>"; };
+		0FABC04A7441756EE074F885A3B9B34D /* FAuthType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthType.h; sourceTree = "<group>"; };
+		1362D4371D23351A75E9404B5AFEFD09 /* FMutableData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMutableData.h; sourceTree = "<group>"; };
+		1BFC32655147C9403AF19BF7496A0664 /* CLTransformation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLTransformation.m; path = Cloudinary/CLTransformation.m; sourceTree = "<group>"; };
+		1C75D9A62996CB64EC915D3EDD10D878 /* Cloudinary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cloudinary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CE9312A375C55D2A114A50FAFCF7D29 /* NSString+CLURLEncoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+CLURLEncoding.h"; path = "Cloudinary/NSString+CLURLEncoding.h"; sourceTree = "<group>"; };
 		1D1D0FF6D52845067CE8CEFF21FAFC35 /* Pods-DrinkApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DrinkApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		224368C5EEC49D4D956B5B95BB215BFB /* libFirebaseStatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libFirebaseStatic.a; sourceTree = "<group>"; };
+		1E73ABA0F45D0EBE28B22327E5748F52 /* Cloudinary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudinary-umbrella.h"; sourceTree = "<group>"; };
+		204A83206CCF28BC4F5BB6F6BF293088 /* Firebase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Firebase.modulemap; sourceTree = "<group>"; };
+		222E0D8BBC18F047F7D232B3F352893A /* CLCloudinary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLCloudinary.h; path = Cloudinary/CLCloudinary.h; sourceTree = "<group>"; };
 		2562A3079A7CC4487933C167DCA75FBA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		2BF2DC6E51D7D72AE1451EA356CE6DE4 /* Pods-DrinkAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DrinkAppTests-frameworks.sh"; sourceTree = "<group>"; };
 		37A9C6BA80EB82D80B371F18F422B218 /* Pods-DrinkApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DrinkApp-umbrella.h"; sourceTree = "<group>"; };
 		384EAF23B0C15D228CC47D9B302994BA /* Pods-DrinkApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DrinkApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		3C7CA58E3DA234AA2574549CD49238A7 /* Firebase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Firebase.modulemap; sourceTree = "<group>"; };
-		55000294CC62B92A597CC865BC53ECFC /* FirebaseServerValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseServerValue.h; sourceTree = "<group>"; };
+		462B22152870707495E6EAEA47A7C726 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		50FEF07B35BAFBF46014CA38DF1A61DF /* Cloudinary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cloudinary-dummy.m"; sourceTree = "<group>"; };
+		5369BDA303305480A248416853BC21D9 /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
+		56CF2E967F03490170F36D1D1CA4844B /* CLCloudinary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLCloudinary.m; path = Cloudinary/CLCloudinary.m; sourceTree = "<group>"; };
+		5A6F3C1336FDE640349FBF5C8DACEE1A /* NSDictionary+CLUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+CLUtilities.m"; path = "Cloudinary/NSDictionary+CLUtilities.m"; sourceTree = "<group>"; };
+		5FC5D7796BD8FC22A5B459DB8F87D9EC /* Cloudinary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudinary-prefix.pch"; sourceTree = "<group>"; };
+		61C63CDE2A589FBE3AB1C8B12FEC51BC /* CLUploader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLUploader.m; path = Cloudinary/CLUploader.m; sourceTree = "<group>"; };
 		631C7879B4FF5DAF62305D0247AF58AD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		65D4E7C868C4559D40FCCBD552D914E1 /* CLTransformation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLTransformation.h; path = Cloudinary/CLTransformation.h; sourceTree = "<group>"; };
 		65E9FC4E20CE4F3A89FE75C6F2902D34 /* Pods-DrinkApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DrinkApp-dummy.m"; sourceTree = "<group>"; };
 		692FFEC418F76FA54203BF9FFBAD692F /* Pods-DrinkApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DrinkApp-frameworks.sh"; sourceTree = "<group>"; };
-		6F08387F111DC652AC1D95C51E4BE5A8 /* Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA6BDD374FF6807DE2CF4BB3C2E5FBF /* FTransactionResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FTransactionResult.h; sourceTree = "<group>"; };
+		6D1A0ED9F64A713D5E9A6387882E0541 /* Firebase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Firebase-dummy.m"; sourceTree = "<group>"; };
 		6F7D8DF493D53A880E6D325B5C9F793F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		73012B55E67807C63096785889ADA660 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7575136C1C2F79E746C0FE2E50462DFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		760DB9A2C943C8821FF3CD8C31DEA5DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7E547A224BA2BD4DB4A5DB059D7F5898 /* FMutableData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMutableData.h; sourceTree = "<group>"; };
-		817BCDAD66E1493A462C3D125BB8A039 /* FEventType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FEventType.h; sourceTree = "<group>"; };
-		85FE7BFEAA7B743553B973A7168CDD98 /* FDataSnapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDataSnapshot.h; sourceTree = "<group>"; };
-		891B0E2082543D26FADFA72F524E77AF /* FAuthType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthType.h; sourceTree = "<group>"; };
+		85BD3664C1F4EE13F7A60E7700571063 /* CLEagerTransformation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLEagerTransformation.h; path = Cloudinary/CLEagerTransformation.h; sourceTree = "<group>"; };
 		8BA7A66E0727E7CD4D8FD23096968872 /* Pods-DrinkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DrinkApp.release.xcconfig"; sourceTree = "<group>"; };
-		8CAA7C78DB3882A984A96D28F8AA2D41 /* FirebaseApp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
-		91C0143DCE5A276FD546BC307BA6384A /* Firebase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Firebase-dummy.m"; sourceTree = "<group>"; };
+		8E0C62EC4CFE8D7FA9DDDBF7FAFD6E60 /* Firebase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-prefix.pch"; sourceTree = "<group>"; };
+		8E98C46F89C5EB569B3795B02894F6C7 /* FEventType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FEventType.h; sourceTree = "<group>"; };
+		903978C8271A0C15F23E4008E0341E9F /* Pods_DrinkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		921EE02A6E0AB94CD29E81F19367BF56 /* Firebase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Firebase.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9726FDC67EF47C28FEC9A974D42B81B4 /* FConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FConfig.h; sourceTree = "<group>"; };
-		99994D7C8CADD905BE2B9BBD61C5DAD8 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
-		A2E2AC3209047C6550E8D065954966F5 /* FQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FQuery.h; sourceTree = "<group>"; };
-		A35E3E3F0CCA6B0B0A5E20810C135EA2 /* Firebase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-umbrella.h"; sourceTree = "<group>"; };
+		A1168C12B3A0354044AC8F7A5F082BE0 /* FirebaseApp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
 		A63B8F070BBE049F543466FF6A74DD2C /* Pods-DrinkApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DrinkApp-resources.sh"; sourceTree = "<group>"; };
 		A77679CCDDAD5A6FA0449F7B2E4EBC3E /* Pods-DrinkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DrinkApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A940B2E4C6FCC9CA963FFFFEBE0E9572 /* Pods_DrinkAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9ABD6D63442820D2D02A3FF6B80FB1C /* NSString+CLURLEncoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+CLURLEncoding.m"; path = "Cloudinary/NSString+CLURLEncoding.m"; sourceTree = "<group>"; };
+		AA65888906684A55B3AF82F203D2603E /* Cloudinary.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cloudinary.xcconfig; sourceTree = "<group>"; };
+		AB00179EC2FD2F33CA8B465403106E2F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEC3568C954E3D18428D36A92C220B07 /* Pods-DrinkAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DrinkAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B8A3E022EEBF7EE421677F959588CBDA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9A06FFED058218134C702A407304A9F /* FTransactionResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FTransactionResult.h; sourceTree = "<group>"; };
+		B5CAC880455EF333284AF83AAAA701E8 /* Cloudinary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Cloudinary.h; path = Cloudinary/Cloudinary.h; sourceTree = "<group>"; };
 		BA0E9371EA250DF53C292488D12D539A /* Pods-DrinkAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DrinkAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB86F34F0F727C42B51D0E196BB27C1 /* Pods-DrinkAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DrinkAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BD60BB99889333E71D9561FC07CF86D6 /* Pods_DrinkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE4A970D527CB77C2242114AE42FCA8 /* Pods-DrinkApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DrinkApp.modulemap"; sourceTree = "<group>"; };
-		C30DAF734CAAF2F494DE720B2386CFFF /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
+		BF687367F5F34161EBC6B2C307E1C862 /* FQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FQuery.h; sourceTree = "<group>"; };
+		C4B1C840A3D681CE5BE78F3F52077263 /* CLLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLLayer.h; path = Cloudinary/CLLayer.h; sourceTree = "<group>"; };
+		C4B734C0F49399515BE44805C8BF82A1 /* FAuthData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthData.h; sourceTree = "<group>"; };
+		C5B5007B608371B3D96F59F443965BCE /* CLUploader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLUploader.h; path = Cloudinary/CLUploader.h; sourceTree = "<group>"; };
+		C5F2D433BC830C889818AA75CC61900F /* FDataSnapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDataSnapshot.h; sourceTree = "<group>"; };
 		C90D7B86E7958832933FC63FA53F41A2 /* Pods-DrinkAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DrinkAppTests.modulemap"; sourceTree = "<group>"; };
-		CDBB06694A091085C1CDD755EBC4B578 /* FAuthData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthData.h; sourceTree = "<group>"; };
-		CF42501C79FA7EF714F226843E3E7726 /* Pods_DrinkAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1FA6E8A8FDF36F0BDB3EC464C47CFB /* Cloudinary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cloudinary.modulemap; sourceTree = "<group>"; };
+		CEDCE08F2E51AB98ED38CF9BCD5C16B9 /* CLLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLLayer.m; path = Cloudinary/CLLayer.m; sourceTree = "<group>"; };
 		D09CB311958DFB9F50018DC5B50715B4 /* Pods-DrinkAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DrinkAppTests-resources.sh"; sourceTree = "<group>"; };
+		D1052D202C908D366AB35D4126CE7623 /* FirebaseServerValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseServerValue.h; sourceTree = "<group>"; };
+		D86B6B0ADCF1D6D16200F1D7E97063F2 /* FConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FConfig.h; sourceTree = "<group>"; };
+		DD5FA3C7B58E39D62311D785F97D991B /* NSDictionary+CLUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+CLUtilities.h"; path = "Cloudinary/NSDictionary+CLUtilities.h"; sourceTree = "<group>"; };
 		DF63449D64CA0709A81FCD59A3D7CAC3 /* Pods-DrinkAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DrinkAppTests-dummy.m"; sourceTree = "<group>"; };
 		DF7CDECD330F6311F412DAFACCB7D84E /* Pods-DrinkAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DrinkAppTests-umbrella.h"; sourceTree = "<group>"; };
-		E6BB016D3ABEBF694D68538838DE8DA0 /* Firebase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Firebase.xcconfig; sourceTree = "<group>"; };
+		E4C23A5C27C97458858BF007E0FFC58C /* Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E712C7A7D44EEE482DFA085E74BC8BC5 /* libFirebaseStatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libFirebaseStatic.a; sourceTree = "<group>"; };
+		E9FF09AC8CE63C84F8250DAFA0D192D0 /* CLEagerTransformation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLEagerTransformation.m; path = Cloudinary/CLEagerTransformation.m; sourceTree = "<group>"; };
+		EDE4D38953A16D4E320526190497E269 /* Firebase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-umbrella.h"; sourceTree = "<group>"; };
 		FB916104AF10477A8454EE2C8177DC73 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8DFDB07897048909F2E08856EAFCEB3F /* Frameworks */ = {
+		6B29926A1881D98E518F5053A6B17597 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2A43652247878BD6A410A6F8AC2B2C /* Foundation.framework in Frameworks */,
+				F8537CB4C08357444D66F92A99CE6B32 /* Foundation.framework in Frameworks */,
+				C87CFCA94F99E62EEB3F3B0A3C0A9BD4 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +162,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DED71CEF8D7294AEEBC54FD6DBA6D4E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67104E475293E0541E505C99D0A53568 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1DD4EEAB18EBE2C663B94315A437154 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,6 +181,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		077610D84E19BD1E3D110152DF544729 /* Cloudinary */ = {
+			isa = PBXGroup;
+			children = (
+				222E0D8BBC18F047F7D232B3F352893A /* CLCloudinary.h */,
+				56CF2E967F03490170F36D1D1CA4844B /* CLCloudinary.m */,
+				85BD3664C1F4EE13F7A60E7700571063 /* CLEagerTransformation.h */,
+				E9FF09AC8CE63C84F8250DAFA0D192D0 /* CLEagerTransformation.m */,
+				C4B1C840A3D681CE5BE78F3F52077263 /* CLLayer.h */,
+				CEDCE08F2E51AB98ED38CF9BCD5C16B9 /* CLLayer.m */,
+				B5CAC880455EF333284AF83AAAA701E8 /* Cloudinary.h */,
+				65D4E7C868C4559D40FCCBD552D914E1 /* CLTransformation.h */,
+				1BFC32655147C9403AF19BF7496A0664 /* CLTransformation.m */,
+				C5B5007B608371B3D96F59F443965BCE /* CLUploader.h */,
+				61C63CDE2A589FBE3AB1C8B12FEC51BC /* CLUploader.m */,
+				DD5FA3C7B58E39D62311D785F97D991B /* NSDictionary+CLUtilities.h */,
+				5A6F3C1336FDE640349FBF5C8DACEE1A /* NSDictionary+CLUtilities.m */,
+				1CE9312A375C55D2A114A50FAFCF7D29 /* NSString+CLURLEncoding.h */,
+				A9ABD6D63442820D2D02A3FF6B80FB1C /* NSString+CLURLEncoding.m */,
+				A87FA95BCAABAC98DB3EC2B118486E55 /* Support Files */,
+			);
+			path = Cloudinary;
+			sourceTree = "<group>";
+		};
+		07DE15813B5B129AF3EA2561E13A8C55 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				077610D84E19BD1E3D110152DF544729 /* Cloudinary */,
+				37EEB78539009A6A99B55F04640AF070 /* Firebase */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0949BFA36575C86DBC851D213AD9E079 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				204A83206CCF28BC4F5BB6F6BF293088 /* Firebase.modulemap */,
+				921EE02A6E0AB94CD29E81F19367BF56 /* Firebase.xcconfig */,
+				6D1A0ED9F64A713D5E9A6387882E0541 /* Firebase-dummy.m */,
+				8E0C62EC4CFE8D7FA9DDDBF7FAFD6E60 /* Firebase-prefix.pch */,
+				EDE4D38953A16D4E320526190497E269 /* Firebase-umbrella.h */,
+				AB00179EC2FD2F33CA8B465403106E2F /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Firebase";
+			sourceTree = "<group>";
+		};
 		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,22 +235,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2605D752CB5663BE889D9D46D12CCB6E /* Products */ = {
+		37EEB78539009A6A99B55F04640AF070 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				6F08387F111DC652AC1D95C51E4BE5A8 /* Firebase.framework */,
-				BD60BB99889333E71D9561FC07CF86D6 /* Pods_DrinkApp.framework */,
-				CF42501C79FA7EF714F226843E3E7726 /* Pods_DrinkAppTests.framework */,
+				5369BDA303305480A248416853BC21D9 /* Empty.m */,
+				C4B734C0F49399515BE44805C8BF82A1 /* FAuthData.h */,
+				0FABC04A7441756EE074F885A3B9B34D /* FAuthType.h */,
+				D86B6B0ADCF1D6D16200F1D7E97063F2 /* FConfig.h */,
+				C5F2D433BC830C889818AA75CC61900F /* FDataSnapshot.h */,
+				8E98C46F89C5EB569B3795B02894F6C7 /* FEventType.h */,
+				462B22152870707495E6EAEA47A7C726 /* Firebase.h */,
+				A1168C12B3A0354044AC8F7A5F082BE0 /* FirebaseApp.h */,
+				D1052D202C908D366AB35D4126CE7623 /* FirebaseServerValue.h */,
+				1362D4371D23351A75E9404B5AFEFD09 /* FMutableData.h */,
+				BF687367F5F34161EBC6B2C307E1C862 /* FQuery.h */,
+				6BA6BDD374FF6807DE2CF4BB3C2E5FBF /* FTransactionResult.h */,
+				B1D648454BFF64CB91A862487644CA7E /* Frameworks */,
+				0949BFA36575C86DBC851D213AD9E079 /* Support Files */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5883428897D1426E6EB96D7E36556192 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				224368C5EEC49D4D956B5B95BB215BFB /* libFirebaseStatic.a */,
-			);
-			name = Frameworks;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		58A5AC406344FE765DE220D50064B00E /* iOS */ = {
@@ -166,8 +272,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				F56CE447D2542B744EB0DA47C71E6EDD /* Pods */,
-				2605D752CB5663BE889D9D46D12CCB6E /* Products */,
+				07DE15813B5B129AF3EA2561E13A8C55 /* Pods */,
+				B5A78E46437B139A109963EC486A1E8B /* Products */,
 				931F52D053D916F3D50CFAC5E7CC67E4 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -199,25 +305,37 @@
 			path = "Target Support Files/Pods-DrinkAppTests";
 			sourceTree = "<group>";
 		};
-		B870B24C59D78DF34E50CD8E9DB3800F /* Firebase */ = {
+		A87FA95BCAABAC98DB3EC2B118486E55 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C30DAF734CAAF2F494DE720B2386CFFF /* Empty.m */,
-				CDBB06694A091085C1CDD755EBC4B578 /* FAuthData.h */,
-				891B0E2082543D26FADFA72F524E77AF /* FAuthType.h */,
-				9726FDC67EF47C28FEC9A974D42B81B4 /* FConfig.h */,
-				85FE7BFEAA7B743553B973A7168CDD98 /* FDataSnapshot.h */,
-				817BCDAD66E1493A462C3D125BB8A039 /* FEventType.h */,
-				99994D7C8CADD905BE2B9BBD61C5DAD8 /* Firebase.h */,
-				8CAA7C78DB3882A984A96D28F8AA2D41 /* FirebaseApp.h */,
-				55000294CC62B92A597CC865BC53ECFC /* FirebaseServerValue.h */,
-				7E547A224BA2BD4DB4A5DB059D7F5898 /* FMutableData.h */,
-				A2E2AC3209047C6550E8D065954966F5 /* FQuery.h */,
-				B9A06FFED058218134C702A407304A9F /* FTransactionResult.h */,
-				5883428897D1426E6EB96D7E36556192 /* Frameworks */,
-				FCDF2535463133900325F78E576B07E8 /* Support Files */,
+				CD1FA6E8A8FDF36F0BDB3EC464C47CFB /* Cloudinary.modulemap */,
+				AA65888906684A55B3AF82F203D2603E /* Cloudinary.xcconfig */,
+				50FEF07B35BAFBF46014CA38DF1A61DF /* Cloudinary-dummy.m */,
+				5FC5D7796BD8FC22A5B459DB8F87D9EC /* Cloudinary-prefix.pch */,
+				1E73ABA0F45D0EBE28B22327E5748F52 /* Cloudinary-umbrella.h */,
+				7575136C1C2F79E746C0FE2E50462DFF /* Info.plist */,
 			);
-			path = Firebase;
+			name = "Support Files";
+			path = "../Target Support Files/Cloudinary";
+			sourceTree = "<group>";
+		};
+		B1D648454BFF64CB91A862487644CA7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E712C7A7D44EEE482DFA085E74BC8BC5 /* libFirebaseStatic.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5A78E46437B139A109963EC486A1E8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C75D9A62996CB64EC915D3EDD10D878 /* Cloudinary.framework */,
+				E4C23A5C27C97458858BF007E0FFC58C /* Firebase.framework */,
+				903978C8271A0C15F23E4008E0341E9F /* Pods_DrinkApp.framework */,
+				A940B2E4C6FCC9CA963FFFFEBE0E9572 /* Pods_DrinkAppTests.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BB2DB260C5F2859841231572AFCD4BD6 /* Pods-DrinkApp */ = {
@@ -236,28 +354,6 @@
 			);
 			name = "Pods-DrinkApp";
 			path = "Target Support Files/Pods-DrinkApp";
-			sourceTree = "<group>";
-		};
-		F56CE447D2542B744EB0DA47C71E6EDD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B870B24C59D78DF34E50CD8E9DB3800F /* Firebase */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		FCDF2535463133900325F78E576B07E8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3C7CA58E3DA234AA2574549CD49238A7 /* Firebase.modulemap */,
-				E6BB016D3ABEBF694D68538838DE8DA0 /* Firebase.xcconfig */,
-				91C0143DCE5A276FD546BC307BA6384A /* Firebase-dummy.m */,
-				104481390B1098325AD2AFB70FC78878 /* Firebase-prefix.pch */,
-				A35E3E3F0CCA6B0B0A5E20810C135EA2 /* Firebase-umbrella.h */,
-				B8A3E022EEBF7EE421677F959588CBDA /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Firebase";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +378,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		489663AB9DEAB83AB2C0DDA477CFA85B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780F9EE18BB762F6AF0C775FC7EE40F0 /* CLCloudinary.h in Headers */,
+				4254A0FF8DA0A7889597E2371ACD18F3 /* CLEagerTransformation.h in Headers */,
+				FAF95D9CF354B750CC46337AA5DA514E /* CLLayer.h in Headers */,
+				B7C3122FC670D40719751B21330BD6EC /* Cloudinary-umbrella.h in Headers */,
+				DA2B2D205B75820C65A7CFD079710733 /* Cloudinary.h in Headers */,
+				AA4C2CA210326AAF5DF395979A694760 /* CLTransformation.h in Headers */,
+				16D235F431BE17C972CB8DD3A86B392E /* CLUploader.h in Headers */,
+				4742ACAD556BEC7963C7E93895E37B6E /* NSDictionary+CLUtilities.h in Headers */,
+				3B3B02A4282B63E66A715A4E4EB1B7AB /* NSString+CLURLEncoding.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64723B1CDA2E3610AABCD9DCCD626BF2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				950DCD33D75D3E7D111A0EF0FDF5D31B /* Pods-DrinkApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		841742FFC62AE6CC69FBC33795D28916 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,33 +410,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C671DDBE9EA9D7FF271AC4FA98BF7AD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9F8F5F7BD8D5724FF15B6FDF8A29C37 /* Pods-DrinkApp-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		149B2F36293B920B350A3F00FCCB52E4 /* Pods-DrinkApp */ = {
+		48B8C6824A951BF75FEDC0EB8875466D /* Pods-DrinkApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1EF3539F3FA073C102A4C681B9D2E125 /* Build configuration list for PBXNativeTarget "Pods-DrinkApp" */;
+			buildConfigurationList = 5090EBE55ED584ED934DF039BC15BD7D /* Build configuration list for PBXNativeTarget "Pods-DrinkApp" */;
 			buildPhases = (
-				6529815BE92F66BBAB45CA824A7A5473 /* Sources */,
-				8DFDB07897048909F2E08856EAFCEB3F /* Frameworks */,
-				9C671DDBE9EA9D7FF271AC4FA98BF7AD /* Headers */,
+				7421A876CD0CFB4B83BDE4F89E57E6B6 /* Sources */,
+				DED71CEF8D7294AEEBC54FD6DBA6D4E1 /* Frameworks */,
+				64723B1CDA2E3610AABCD9DCCD626BF2 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4E2D80C526AA14826A2FA777F166045 /* PBXTargetDependency */,
+				CED915D9206EF121626DB2D81D6EE3B6 /* PBXTargetDependency */,
+				F4E3DBCBAE30AE907DA88D349B3453FB /* PBXTargetDependency */,
 			);
 			name = "Pods-DrinkApp";
 			productName = "Pods-DrinkApp";
-			productReference = BD60BB99889333E71D9561FC07CF86D6 /* Pods_DrinkApp.framework */;
+			productReference = 903978C8271A0C15F23E4008E0341E9F /* Pods_DrinkApp.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		66C613478A521F76F42EBA01FE590F15 /* Pods-DrinkAppTests */ = {
@@ -333,7 +446,7 @@
 			);
 			name = "Pods-DrinkAppTests";
 			productName = "Pods-DrinkAppTests";
-			productReference = CF42501C79FA7EF714F226843E3E7726 /* Pods_DrinkAppTests.framework */;
+			productReference = A940B2E4C6FCC9CA963FFFFEBE0E9572 /* Pods_DrinkAppTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B7AC9326D819482593FE118E915409D7 /* Firebase */ = {
@@ -350,7 +463,24 @@
 			);
 			name = Firebase;
 			productName = Firebase;
-			productReference = 6F08387F111DC652AC1D95C51E4BE5A8 /* Firebase.framework */;
+			productReference = E4C23A5C27C97458858BF007E0FFC58C /* Firebase.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FBBEF6AA8E8483FE9C432B16A32B8362 /* Cloudinary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07EE20FBA242D77950A2189443C93A54 /* Build configuration list for PBXNativeTarget "Cloudinary" */;
+			buildPhases = (
+				C341E709969CC034DCD0B01EC7D8CC84 /* Sources */,
+				6B29926A1881D98E518F5053A6B17597 /* Frameworks */,
+				489663AB9DEAB83AB2C0DDA477CFA85B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cloudinary;
+			productName = Cloudinary;
+			productReference = 1C75D9A62996CB64EC915D3EDD10D878 /* Cloudinary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -370,12 +500,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2605D752CB5663BE889D9D46D12CCB6E /* Products */;
+			productRefGroup = B5A78E46437B139A109963EC486A1E8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				FBBEF6AA8E8483FE9C432B16A32B8362 /* Cloudinary */,
 				B7AC9326D819482593FE118E915409D7 /* Firebase */,
-				149B2F36293B920B350A3F00FCCB52E4 /* Pods-DrinkApp */,
+				48B8C6824A951BF75FEDC0EB8875466D /* Pods-DrinkApp */,
 				66C613478A521F76F42EBA01FE590F15 /* Pods-DrinkAppTests */,
 			);
 		};
@@ -391,11 +522,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6529815BE92F66BBAB45CA824A7A5473 /* Sources */ = {
+		7421A876CD0CFB4B83BDE4F89E57E6B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9239B5524B739A87A34D706CCFE2A644 /* Pods-DrinkApp-dummy.m in Sources */,
+				56918CEF99CB3C40340A64C4DE60BAAB /* Pods-DrinkApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C341E709969CC034DCD0B01EC7D8CC84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCB05E750CD7C4C51E98BAFD617AEC2F /* CLCloudinary.m in Sources */,
+				9927F549986D46D5A68563FB9BA14573 /* CLEagerTransformation.m in Sources */,
+				545A3333A816322691BB3928D464361B /* CLLayer.m in Sources */,
+				8F4BB859042D9C93C10A8FAD57420E5C /* Cloudinary-dummy.m in Sources */,
+				D55A89C3B5D82D0F21C75CD59C651392 /* CLTransformation.m in Sources */,
+				A316954141655BB713D4F68EAA8B376F /* CLUploader.m in Sources */,
+				27724BD4C72DC2521D5504A99BBD3AC0 /* NSDictionary+CLUtilities.m in Sources */,
+				C42B3AEFA10DBE9EE96400780CF10655 /* NSString+CLURLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,16 +556,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F4E2D80C526AA14826A2FA777F166045 /* PBXTargetDependency */ = {
+		CED915D9206EF121626DB2D81D6EE3B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cloudinary;
+			target = FBBEF6AA8E8483FE9C432B16A32B8362 /* Cloudinary */;
+			targetProxy = 966AE3743EAEC28693444B702BCCF933 /* PBXContainerItemProxy */;
+		};
+		F4E3DBCBAE30AE907DA88D349B3453FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Firebase;
 			target = B7AC9326D819482593FE118E915409D7 /* Firebase */;
-			targetProxy = F9B9BD7CD66C0F2B5BEF3D293FA938DF /* PBXContainerItemProxy */;
+			targetProxy = BBD2D61DBEC755D83CB3CE261491D13D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		6EB7068F0F680948E6EA4C65E744687B /* Release */ = {
+		17A1D0E536370A53FA1A9A78835DA3F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8BA7A66E0727E7CD4D8FD23096968872 /* Pods-DrinkApp.release.xcconfig */;
 			buildSettings = {
@@ -444,6 +596,97 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_DrinkApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		22EE7342DA98303EB9BD68BAB9360CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A77679CCDDAD5A6FA0449F7B2E4EBC3E /* Pods-DrinkApp.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DrinkApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DrinkApp/Pods-DrinkApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DrinkApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		335755BDDC3771D38E50202ABB4DF35A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA65888906684A55B3AF82F203D2603E /* Cloudinary.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cloudinary/Cloudinary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cloudinary/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cloudinary/Cloudinary.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Cloudinary;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		38E5C23B79F76416AEB07D4A72ACFAC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA65888906684A55B3AF82F203D2603E /* Cloudinary.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cloudinary/Cloudinary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cloudinary/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cloudinary/Cloudinary.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Cloudinary;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -484,39 +727,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		70FC05E4F836DBAA21E61D74B0C94177 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A77679CCDDAD5A6FA0449F7B2E4EBC3E /* Pods-DrinkApp.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DrinkApp/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DrinkApp/Pods-DrinkApp.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_DrinkApp;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		811519CB8F683AC06F9C98B55AC40F11 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -598,7 +808,7 @@
 		};
 		9E5F9A409F7A80E320328AA627E5F72F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6BB016D3ABEBF694D68538838DE8DA0 /* Firebase.xcconfig */;
+			baseConfigurationReference = 921EE02A6E0AB94CD29E81F19367BF56 /* Firebase.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -627,7 +837,7 @@
 		};
 		A137EDCFE721980B861039D09E3342BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6BB016D3ABEBF694D68538838DE8DA0 /* Firebase.xcconfig */;
+			baseConfigurationReference = 921EE02A6E0AB94CD29E81F19367BF56 /* Firebase.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -699,11 +909,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1EF3539F3FA073C102A4C681B9D2E125 /* Build configuration list for PBXNativeTarget "Pods-DrinkApp" */ = {
+		07EE20FBA242D77950A2189443C93A54 /* Build configuration list for PBXNativeTarget "Cloudinary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70FC05E4F836DBAA21E61D74B0C94177 /* Debug */,
-				6EB7068F0F680948E6EA4C65E744687B /* Release */,
+				335755BDDC3771D38E50202ABB4DF35A /* Debug */,
+				38E5C23B79F76416AEB07D4A72ACFAC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -722,6 +932,15 @@
 			buildConfigurations = (
 				9E5F9A409F7A80E320328AA627E5F72F /* Debug */,
 				A137EDCFE721980B861039D09E3342BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5090EBE55ED584ED934DF039BC15BD7D /* Build configuration list for PBXNativeTarget "Pods-DrinkApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22EE7342DA98303EB9BD68BAB9360CB7 /* Debug */,
+				17A1D0E536370A53FA1A9A78835DA3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,12 +1,15 @@
 PODS:
+  - Cloudinary (1.0.15)
   - Firebase (2.5.1)
 
 DEPENDENCIES:
+  - Cloudinary
   - Firebase (>= 2.5.0)
 
 SPEC CHECKSUMS:
+  Cloudinary: f80af4565ec08c521d5e58cb56d9fbe1e4595e40
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
 
-PODFILE CHECKSUM: fb5f3c4ca49abb88fc8e1c96959d6fecd6f8fd3f
+PODFILE CHECKSUM: aa37cff144c9a1d825be1510194efe54372ddfb5
 
 COCOAPODS: 1.0.0.beta.6

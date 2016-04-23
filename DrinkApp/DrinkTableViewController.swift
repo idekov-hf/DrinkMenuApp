@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Cloudinary
 
 class DrinkTableViewController: UITableViewController, CLUploaderDelegate {
     

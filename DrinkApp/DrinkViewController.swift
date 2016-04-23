@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cloudinary
 
 class DrinkViewController: UIViewController, CLUploaderDelegate {
     
