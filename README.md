@@ -1,3 +1,3 @@
 # DrinkMenuApp
 
-App that displays a list of products, their title, descriptions and price and an image as well. Information is stored on Firebase.
+App that displays a list of products (drink title, descriptions, price and an image). Product information is stored on Firebase.
